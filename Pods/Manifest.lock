@@ -1,51 +1,66 @@
 PODS:
-  - Alamofire (5.9.1)
-  - KakaoSDK (2.22.1):
-    - KakaoSDKAuth (= 2.22.1)
-    - KakaoSDKCert (= 2.22.1)
-    - KakaoSDKCommon (= 2.22.1)
-    - KakaoSDKFriend (= 2.22.1)
-    - KakaoSDKNavi (= 2.22.1)
-    - KakaoSDKShare (= 2.22.1)
-    - KakaoSDKTalk (= 2.22.1)
-    - KakaoSDKTemplate (= 2.22.1)
-    - KakaoSDKUser (= 2.22.1)
-  - KakaoSDKAuth (2.22.1):
-    - KakaoSDKCommon (= 2.22.1)
-  - KakaoSDKCert (2.22.1):
-    - KakaoSDKCertCore (= 2.22.1)
-    - KakaoSDKUser (= 2.22.1)
-  - KakaoSDKCertCore (2.22.1)
-  - KakaoSDKCommon (2.22.1):
-    - KakaoSDKCommon/Common (= 2.22.1)
-    - KakaoSDKCommon/Network (= 2.22.1)
-  - KakaoSDKCommon/Common (2.22.1)
-  - KakaoSDKCommon/Network (2.22.1):
-    - Alamofire (~> 5.9.0)
-    - KakaoSDKCommon/Common (= 2.22.1)
-  - KakaoSDKFriend (2.22.1):
-    - KakaoSDKFriendCore (= 2.22.1)
-    - KakaoSDKUser (= 2.22.1)
-  - KakaoSDKFriendCore (2.22.1)
-  - KakaoSDKNavi (2.22.1):
-    - KakaoSDKCommon/Common (= 2.22.1)
-  - KakaoSDKShare (2.22.1):
-    - KakaoSDKCommon (= 2.22.1)
-    - KakaoSDKTemplate (= 2.22.1)
-  - KakaoSDKTalk (2.22.1):
-    - KakaoSDKTemplate (= 2.22.1)
-    - KakaoSDKUser (= 2.22.1)
-  - KakaoSDKTemplate (2.22.1):
-    - KakaoSDKCommon/Common (= 2.22.1)
-  - KakaoSDKUser (2.22.1):
-    - KakaoSDKAuth (= 2.22.1)
+  - Alamofire (5.2.2)
+  - CryptoSwift (1.8.2)
+  - JGProgressHUD (2.2)
+  - KakaoSDK (2.21.1):
+    - KakaoSDKAuth (= 2.21.1)
+    - KakaoSDKCert (= 2.21.1)
+    - KakaoSDKCommon (= 2.21.1)
+    - KakaoSDKFriend (= 2.21.1)
+    - KakaoSDKNavi (= 2.21.1)
+    - KakaoSDKShare (= 2.21.1)
+    - KakaoSDKTalk (= 2.21.1)
+    - KakaoSDKTemplate (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKAuth (2.21.1):
+    - KakaoSDKCommon (= 2.21.1)
+  - KakaoSDKCert (2.21.1):
+    - KakaoSDKCertCore (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKCertCore (2.21.1)
+  - KakaoSDKCommon (2.21.1):
+    - KakaoSDKCommon/Common (= 2.21.1)
+    - KakaoSDKCommon/Network (= 2.21.1)
+  - KakaoSDKCommon/Common (2.21.1)
+  - KakaoSDKCommon/Network (2.21.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.21.1)
+  - KakaoSDKFriend (2.21.1):
+    - KakaoSDKFriendCore (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKFriendCore (2.21.1)
+  - KakaoSDKNavi (2.21.1):
+    - KakaoSDKCommon/Common (= 2.21.1)
+  - KakaoSDKShare (2.21.1):
+    - KakaoSDKCommon (= 2.21.1)
+    - KakaoSDKTemplate (= 2.21.1)
+  - KakaoSDKTalk (2.21.1):
+    - KakaoSDKTemplate (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKTemplate (2.21.1):
+    - KakaoSDKCommon/Common (= 2.21.1)
+  - KakaoSDKUser (2.21.1):
+    - KakaoSDKAuth (= 2.21.1)
+  - ObjectMapper (4.4.2)
+  - SnapKit (5.0.1)
+  - SwiftOTP (3.0.0)
+  - SwiftyBootpay (3.3.833):
+    - Alamofire (~> 5.2.2)
+    - CryptoSwift
+    - JGProgressHUD
+    - ObjectMapper
+    - SnapKit (~> 5.0.0)
+    - SwiftOTP
 
 DEPENDENCIES:
   - KakaoSDK
+  - SwiftyBootpay (~> 3.3.9)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CryptoSwift
+    - JGProgressHUD
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCert
@@ -58,22 +73,32 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - ObjectMapper
+    - SnapKit
+    - SwiftOTP
+    - SwiftyBootpay
 
 SPEC CHECKSUMS:
-  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  KakaoSDK: 20898c8d7021ca6da40e3d0623737c75df438c45
-  KakaoSDKAuth: 347f1e6bf455689c81fb4eee3c9e02b622016fb4
-  KakaoSDKCert: 0df018d349fd14da63b13589867fbd1e3fc8fc02
-  KakaoSDKCertCore: 39c3eb6b4599854c9e1c7cffb7b14f58c8b2e119
-  KakaoSDKCommon: 596436353cec3865eb1475ecea1a7259d881c5ac
-  KakaoSDKFriend: f33095d25ea11c6efc9410af221df1a6235d903b
-  KakaoSDKFriendCore: e48607c84d376dbf86cd5efe0aa960fa90462bd7
-  KakaoSDKNavi: d81cd283a1305b14a458a4d4f6b4fd18fc597979
-  KakaoSDKShare: 7974de774f696cca1439e128178293d880064d96
-  KakaoSDKTalk: 27242887e149005b46fcea585816c2d2e8723c5e
-  KakaoSDKTemplate: 0fc1cfad5b099def077be91aa9a535e77fd76bb4
-  KakaoSDKUser: 31c3aaa36d32bd77f9a5acbe371e174b85a10a91
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  KakaoSDK: 7e33103e55841143a6eb55e0b5566dcb8fc9cc55
+  KakaoSDKAuth: 28343159dd60ee9bbb61ff25d45d9769fcef6b8c
+  KakaoSDKCert: 05def2d8d5e1d1abc35a900a6dbf6de652b42f58
+  KakaoSDKCertCore: f8e07aa4ec5201399a09bf4e65ffd08e5dd45ced
+  KakaoSDKCommon: 7938fce8e5ba3e73490f1928e55b20b510a0685b
+  KakaoSDKFriend: ccb7496e97927d8aad79c94a88f90d7a68a4318b
+  KakaoSDKFriendCore: 435d6b7ead8bcc99028bc584c4a203e5630f3512
+  KakaoSDKNavi: e70e13753974592d793a21327a6e7a7240d0482e
+  KakaoSDKShare: b5e879fbcedc8930df9789bf8a9c91d4471a0056
+  KakaoSDKTalk: fba042148bf9dad0590a6ab7f175e2fe895fd488
+  KakaoSDKTemplate: 4458958285d9fc97dff1483184b6f810a938a249
+  KakaoSDKUser: 35608bb49bbc644f507561d8b8a33dec1c5eb360
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftOTP: ec3848f12a4541f29d96f6a0fe63dcbb8448d96f
+  SwiftyBootpay: 5313189ecd6ae8f46132b48ff78060daeaa724ca
 
-PODFILE CHECKSUM: e50caa5b17e45ab77befd8a2f6b4454f44f8a678
+PODFILE CHECKSUM: 754865bdf1bd127e3ec42269d149a5bf653bb070
 
 COCOAPODS: 1.15.2
