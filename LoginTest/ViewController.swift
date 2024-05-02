@@ -26,6 +26,7 @@ var userLoginNick = ""
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
@@ -41,18 +42,9 @@ class ViewController: UIViewController {
         
         self.kakaoWebLogin()
         
-        if !UserApi.isKakaoTalkLoginAvailable() {
-            if let loadData = UserDefaults.standard.object(forKey: userLoginNick) as? Data {
-                //유저 디폴트에 저장된 정보 로드
-//                if let loadObject = try? decoder.decode(User.self, from: loadData) {
-//                    print(loadObject)
-//                }
-                logoutUI()
-            }else
-            {
-                SigninUI()
-            }
-        }
+//        if !UserApi.isKakaoTalkLoginAvailable() {
+//            
+//        }
     }
     // MARK: - 회원가입 버튼
     @IBAction func signButtonTap(_ sender: Any) {
@@ -93,18 +85,21 @@ class ViewController: UIViewController {
         withdrawalButton.isHidden = true
         logOutButton.isHidden = true
         signButton.isHidden = true
+        informationLabel.text = "로그인 해 주세요"
     }
     private func logoutUI() {
         loginButton.isHidden = true
         withdrawalButton.isHidden = false
         logOutButton.isHidden = false
-        signButton.isHidden = false
+        signButton.isHidden = true
+        informationLabel.text = "\(userLoginNick)님 안녕하세요"
     }
     private func SigninUI() {
         loginButton.isHidden = true
         withdrawalButton.isHidden = true
         logOutButton.isHidden = false
         signButton.isHidden = false
+        informationLabel.text = "회원가입 해 주세요"
     }
     // MARK: - 카카오 앱 로그인
     private func kakaoAppLogin() {
@@ -158,6 +153,18 @@ class ViewController: UIViewController {
                 return
             }else {
                 userLoginNick = (user?.kakaoAccount?.profile?.nickname)!
+                //  유저디폴트에 로그인한 정보의 유무에 따라 UI 변화
+                if let loadData = UserDefaults.standard.object(forKey: userLoginNick) as? Data {
+    //                유저 디폴트에 저장된 정보 로드
+    //                if let loadObject = try? decoder.decode(User.self, from: loadData) {
+    //                    print(loadObject)
+    //                }
+                    self.logoutUI()
+                }else
+                {
+                    
+                    self.SigninUI()
+                }
             }
 
         }
