@@ -9,15 +9,17 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import SwiftyBootpay
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         KakaoSDK.initSDK(appKey: "6bf49b7453d22351f7be60b35a1ed81d")
+        Bootpay.sharedInstance.appLaunch(application_id: "6633fd61cb083ec6e7af5bc8")
         return true
     }
 
@@ -40,7 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
 
             return false
-        }
+    }
+    func applicationWillResignActive(_ application: UIApplication) {
+        Bootpay.sharedInstance.sessionActive(active: false)
+    }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Bootpay.sharedInstance.sessionActive(active: true)
+    }
 }
 

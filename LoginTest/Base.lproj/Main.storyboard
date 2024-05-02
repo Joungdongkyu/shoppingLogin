@@ -59,6 +59,15 @@
                                     <action selector="signButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAU-L7-lME"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxV-8t-rM5">
+                                <rect key="frame" x="19" y="103" width="69" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="결제창"/>
+                                <connections>
+                                    <action selector="paymentButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOx-M6-eR8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
