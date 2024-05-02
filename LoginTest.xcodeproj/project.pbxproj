@@ -42,9 +42,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB1D42C02BE412D200F7384B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AB310B0F2BDFBCD000B8EB41 = {
 			isa = PBXGroup;
 			children = (
+				AB1D42C02BE412D200F7384B /* Model */,
 				AB310B1A2BDFBCD000B8EB41 /* LoginTest */,
 				AB310B192BDFBCD000B8EB41 /* Products */,
 				B0F7AF36169F035AFE561F8D /* Pods */,

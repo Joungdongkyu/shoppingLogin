@@ -11,53 +11,71 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 
+struct User: Codable {
+    let nickName: String
+    let coupon: [Coupon]
+}
+struct Coupon: Codable {
+    let couponName: String
+    let expiration: Int
+}
+
+let encoder = JSONEncoder()
+let decoder = JSONDecoder()
+var userLoginNick = ""
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var withdrawalButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loginUI()
     }
 
+    // MARK: - 로그인 버튼
     @IBAction func loginButtonTap(_ sender: Any) {
-        print("로그인 버튼")
-        // 카카오톡 설치 여부 확인
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoAccount() success.")
-
-                    //do something
-                    self.kakaoGetUserInfo()
-                }
+        
+        self.kakaoWebLogin()
+        
+        if !UserApi.isKakaoTalkLoginAvailable() {
+            if let loadData = UserDefaults.standard.object(forKey: userLoginNick) as? Data {
+                //유저 디폴트에 저장된 정보 로드
+//                if let loadObject = try? decoder.decode(User.self, from: loadData) {
+//                    print(loadObject)
+//                }
+                logoutUI()
+            }else
+            {
+                SigninUI()
             }
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                else {
-//                    print("loginWithKakaoTalk() success.")
-//
-//                   //let idToken = oAuthToken.idToken ?? ""
-//                   //let accessToken = oAuthToken.accessToken
-//                   
-//                   self.kakaoGetUserInfo()
-//                }
-//            }
-//        }else{
-//            print("??")
-//        }
+        }
     }
+    // MARK: - 회원가입 버튼
     @IBAction func signButtonTap(_ sender: Any) {
-      
+        let coup = Coupon(couponName: "웰컴 쿠폰", expiration: 1)
+        let person = User(nickName: userLoginNick, coupon: [coup])
+        if let encoded = try? encoder.encode(person) {
+            UserDefaults.standard.setValue(encoded, forKey: userLoginNick)
+        }
+        logoutUI()
     }
+    // MARK: - 회원탈퇴 버튼
+    @IBAction func withdrawalButtonTap(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: userLoginNick)
+        if let loadData = UserDefaults.standard.object(forKey: userLoginNick) as? Data {
+            if let loadObject = try? decoder.decode(User.self, from: loadData) {
+                print(loadObject)
+            }
+        }else{
+            print("사용자의 정보가 없습니다")
+        }
+        loginUI()
+    }
+    // MARK: - 로그아웃 버튼
     @IBAction func logOutButtonTap(_ sender: Any) {
         print("로그아웃")
         UserApi.shared.logout {(error) in
@@ -68,26 +86,83 @@ class ViewController: UIViewController {
                     print("logout() success.")
                 }
             }
+        loginUI()
+    }
+    private func loginUI() {
+        loginButton.isHidden = false
+        withdrawalButton.isHidden = true
+        logOutButton.isHidden = true
+        signButton.isHidden = true
+    }
+    private func logoutUI() {
+        loginButton.isHidden = true
+        withdrawalButton.isHidden = false
+        logOutButton.isHidden = false
+        signButton.isHidden = false
+    }
+    private func SigninUI() {
+        loginButton.isHidden = true
+        withdrawalButton.isHidden = true
+        logOutButton.isHidden = false
+        signButton.isHidden = false
+    }
+    // MARK: - 카카오 앱 로그인
+    private func kakaoAppLogin() {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
        
+                   UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                       if let error = error {
+                           print(error)
+                       }
+                       else {
+                           print("loginWithKakaoTalk() success.")
+       
+                          //let idToken = oAuthToken.idToken ?? ""
+                          //let accessToken = oAuthToken.accessToken
+       
+                          self.kakaoGetUserInfo()
+                       }
+                   }
+               }else{
+                   print("??")
+               }
     }
     
-    // 사용자 항목 가져오기
+    // MARK: - 카카오 웹 로그인
+    private func kakaoWebLogin() {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+
+                    self.kakaoGetUserInfo()
+            }
+        }
+    }
+    
+    // MARK: - 사용자 항목 가져오는 함수
     private func kakaoGetUserInfo() {
         UserApi.shared.me { user, error in
             if let error = error {
                 print(error)
             }
 
-            let userName = user?.kakaoAccount?.name
-          
+            let userName = (user?.kakaoAccount?.profile?.nickname)!
+//            print((user?.kakaoAccount?.profile?.nickname)!)
+//            print(user?.kakaoAccount?.name)
+            
             if userName == nil {
                 self.kakaoRequestAgreement()
                 return
+            }else {
+                userLoginNick = (user?.kakaoAccount?.profile?.nickname)!
             }
 
         }
     }
-    // 동의
+    // MARK: - 사용자 로그인 정보 동의 함수
     private func kakaoRequestAgreement() {
         UserApi.shared.me { user, error in
             if let error = error {
