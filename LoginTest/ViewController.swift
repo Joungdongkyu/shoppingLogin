@@ -14,8 +14,6 @@ import KakaoSDKUser
 class ViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
-    
-    
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
