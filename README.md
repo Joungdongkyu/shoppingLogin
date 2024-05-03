@@ -1,28 +1,24 @@
 
 Git Workflow
-git clone [저장소 이름]
-cd [저장소 이름]
-git checkout develop
-git checkout -b feature/[이슈번호]
-git status
-git add [작업한 파일]
-git commit (Commit Convention 항목 참고)
-git push origin feature/[이슈번호]
-Pull Request 생성 (gh도 사용해보세요!)
-Code Review
-Merge (Conflict 발생 시 대응 전략 항목 참고)
-git checkout develop
-git pull origin develop → 주의!! 새로운 브랜치 생성 시 반드시 진행할 것
-3번 항목부터 반복
+1. git clone [저장소 이름]
+2. cd [저장소 이름]
+3. git checkout develop
+4. git checkout -b feature/[이슈번호]
+5. git status
+6. git add [작업한 파일]
+7. git commit (Commit Convention 항목 참고)
+8. git push origin feature/[이슈번호]
+9. Pull Request 생성
+
 
 Commit Convention
-feat: 새로운 기능 추가
-# fix: 버그 수정
-# docs: 문서 수정
-# style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-# refactor: 코드 리펙토링
-# test: 테스트 코드, 리펙토링 테스트 코드 추가
-# chore: 빌드 업무 수정, 패키지 매니저 수정
+1. feat: 새로운 기능 추가
+2. fix: 버그 수정
+3. docs: 문서 수정
+4. style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+5. refactor: 코드 리펙토링
+6. test: 테스트 코드, 리펙토링 테스트 코드 추가
+7. chore: 빌드 업무 수정, 패키지 매니저 수정
 
 
 현재까지 구현한것
