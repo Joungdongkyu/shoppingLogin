@@ -49,9 +49,7 @@ extension PickerApi {
                 }
             }
             else {
-                //토큰 갱신은 안해도 되지만 최신 토큰을 주입해야한다.
-                let oauthToken = AUTH.tokenManager.getToken()
-                self.updateAuth(accessToken:oauthToken?.accessToken, expiredAt: oauthToken?.expiredAt, shouldUpdateAtTime: false)
+                //토큰 갱신 안해도 된다.
                 completion(nil)
             }
         }
