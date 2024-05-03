@@ -21,6 +21,14 @@ struct Coupon: Codable {
     let expiration: Int
 }
 
+struct Goods: Codable {
+    let title: String
+    let price: String
+    let description: String
+    let Image: String
+}
+
+
 let encoder = JSONEncoder()
 let decoder = JSONDecoder()
 var userLoginNick = ""
@@ -37,6 +45,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginUI()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         loginUI()
     }
 
@@ -56,7 +67,12 @@ class ViewController: UIViewController {
         if let encoded = try? encoder.encode(person) {
             UserDefaults.standard.setValue(encoded, forKey: userLoginNick)
         }
-        logoutUI()
+        let tabShoppingPage = UIStoryboard.init(name: "ShoppingPage", bundle: nil)
+         guard let ShoppingPageVC = tabShoppingPage.instantiateViewController(withIdentifier: "ShoppingPage")as? ShoppingPageViewController else {return}
+         
+        ShoppingPageVC.modalPresentationStyle = .fullScreen
+         self.present(ShoppingPageVC, animated: true, completion: nil)
+//        logoutUI()
     }
     // MARK: - 회원탈퇴 버튼
     @IBAction func withdrawalButtonTap(_ sender: Any) {
@@ -73,6 +89,11 @@ class ViewController: UIViewController {
     // MARK: - 결제창 버튼
     @IBAction func paymentButtonTap(_ sender: Any) {
         goBuy()
+//        let tabShoppingPage = UIStoryboard.init(name: "ShoppingPage", bundle: nil)
+//         guard let ShoppingPageVC = tabShoppingPage.instantiateViewController(withIdentifier: "ShoppingPage")as? ShoppingPageViewController else {return}
+//         
+//        ShoppingPageVC.modalPresentationStyle = .fullScreen
+//         self.present(ShoppingPageVC, animated: true, completion: nil)
     }
     // MARK: - 로그아웃 버튼
     @IBAction func logOutButtonTap(_ sender: Any) {
@@ -167,7 +188,13 @@ class ViewController: UIViewController {
     //                if let loadObject = try? decoder.decode(User.self, from: loadData) {
     //                    print(loadObject)
     //                }
-                    self.logoutUI()
+                    
+                    let tabShoppingPage = UIStoryboard.init(name: "ShoppingPage", bundle: nil)
+                     guard let ShoppingPageVC = tabShoppingPage.instantiateViewController(withIdentifier: "ShoppingPage")as? ShoppingPageViewController else {return}
+                     
+                    ShoppingPageVC.modalPresentationStyle = .fullScreen
+                     self.present(ShoppingPageVC, animated: true, completion: nil)
+//                    self.logoutUI()
                 }else
                 {
                     

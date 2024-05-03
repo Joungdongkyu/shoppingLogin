@@ -14,6 +14,16 @@
 		AB310B232BDFBCD000B8EB41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB310B212BDFBCD000B8EB41 /* Main.storyboard */; };
 		AB310B252BDFBCD200B8EB41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB310B242BDFBCD200B8EB41 /* Assets.xcassets */; };
 		AB310B282BDFBCD200B8EB41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB310B262BDFBCD200B8EB41 /* LaunchScreen.storyboard */; };
+		ABAC14102BE44BFD0056B22C /* ShoppingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAC140F2BE44BFD0056B22C /* ShoppingPage.storyboard */; };
+		ABAC14122BE44C1E0056B22C /* ShoppingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC14112BE44C1E0056B22C /* ShoppingPageViewController.swift */; };
+		ABAC14142BE44F8D0056B22C /* ShoppingPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC14132BE44F8D0056B22C /* ShoppingPageTableViewCell.swift */; };
+		ABAC14162BE4603B0056B22C /* PaymentPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAC14152BE4603B0056B22C /* PaymentPage.storyboard */; };
+		ABAC14182BE460570056B22C /* PaymentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC14172BE460570056B22C /* PaymentPageViewController.swift */; };
+		ABAC141A2BE462D70056B22C /* PaymentPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC14192BE462D70056B22C /* PaymentPageTableViewCell.swift */; };
+		ABAC141C2BE4683C0056B22C /* StaffPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAC141B2BE4683C0056B22C /* StaffPage.storyboard */; };
+		ABAC141E2BE468500056B22C /* StaffPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC141D2BE468500056B22C /* StaffPageViewController.swift */; };
+		ABAC14202BE479B00056B22C /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAC141F2BE479B00056B22C /* DetailPage.storyboard */; };
+		ABAC14222BE479C60056B22C /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC14212BE479C60056B22C /* DetailPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,16 @@
 		AB310B242BDFBCD200B8EB41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB310B272BDFBCD200B8EB41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB310B292BDFBCD200B8EB41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABAC140F2BE44BFD0056B22C /* ShoppingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingPage.storyboard; sourceTree = "<group>"; };
+		ABAC14112BE44C1E0056B22C /* ShoppingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingPageViewController.swift; sourceTree = "<group>"; };
+		ABAC14132BE44F8D0056B22C /* ShoppingPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingPageTableViewCell.swift; sourceTree = "<group>"; };
+		ABAC14152BE4603B0056B22C /* PaymentPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentPage.storyboard; sourceTree = "<group>"; };
+		ABAC14172BE460570056B22C /* PaymentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageViewController.swift; sourceTree = "<group>"; };
+		ABAC14192BE462D70056B22C /* PaymentPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageTableViewCell.swift; sourceTree = "<group>"; };
+		ABAC141B2BE4683C0056B22C /* StaffPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StaffPage.storyboard; sourceTree = "<group>"; };
+		ABAC141D2BE468500056B22C /* StaffPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffPageViewController.swift; sourceTree = "<group>"; };
+		ABAC141F2BE479B00056B22C /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
+		ABAC14212BE479C60056B22C /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +95,19 @@
 				AB310B1D2BDFBCD000B8EB41 /* SceneDelegate.swift */,
 				AB310B1F2BDFBCD000B8EB41 /* ViewController.swift */,
 				AB310B212BDFBCD000B8EB41 /* Main.storyboard */,
+				ABAC14112BE44C1E0056B22C /* ShoppingPageViewController.swift */,
+				ABAC140F2BE44BFD0056B22C /* ShoppingPage.storyboard */,
+				ABAC14172BE460570056B22C /* PaymentPageViewController.swift */,
+				ABAC14152BE4603B0056B22C /* PaymentPage.storyboard */,
+				ABAC141D2BE468500056B22C /* StaffPageViewController.swift */,
+				ABAC141B2BE4683C0056B22C /* StaffPage.storyboard */,
+				ABAC14212BE479C60056B22C /* DetailPageViewController.swift */,
+				ABAC141F2BE479B00056B22C /* DetailPage.storyboard */,
 				AB310B242BDFBCD200B8EB41 /* Assets.xcassets */,
 				AB310B262BDFBCD200B8EB41 /* LaunchScreen.storyboard */,
 				AB310B292BDFBCD200B8EB41 /* Info.plist */,
+				ABAC14192BE462D70056B22C /* PaymentPageTableViewCell.swift */,
+				ABAC14132BE44F8D0056B22C /* ShoppingPageTableViewCell.swift */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -161,8 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB310B282BDFBCD200B8EB41 /* LaunchScreen.storyboard in Resources */,
+				ABAC14202BE479B00056B22C /* DetailPage.storyboard in Resources */,
+				ABAC14162BE4603B0056B22C /* PaymentPage.storyboard in Resources */,
 				AB310B252BDFBCD200B8EB41 /* Assets.xcassets in Resources */,
 				AB310B232BDFBCD000B8EB41 /* Main.storyboard in Resources */,
+				ABAC141C2BE4683C0056B22C /* StaffPage.storyboard in Resources */,
+				ABAC14102BE44BFD0056B22C /* ShoppingPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,9 +266,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABAC141E2BE468500056B22C /* StaffPageViewController.swift in Sources */,
 				AB310B202BDFBCD000B8EB41 /* ViewController.swift in Sources */,
 				AB310B1C2BDFBCD000B8EB41 /* AppDelegate.swift in Sources */,
+				ABAC14182BE460570056B22C /* PaymentPageViewController.swift in Sources */,
+				ABAC141A2BE462D70056B22C /* PaymentPageTableViewCell.swift in Sources */,
+				ABAC14122BE44C1E0056B22C /* ShoppingPageViewController.swift in Sources */,
+				ABAC14222BE479C60056B22C /* DetailPageViewController.swift in Sources */,
 				AB310B1E2BDFBCD000B8EB41 /* SceneDelegate.swift in Sources */,
+				ABAC14142BE44F8D0056B22C /* ShoppingPageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
